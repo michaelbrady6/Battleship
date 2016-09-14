@@ -13,37 +13,37 @@ public class GameRunner
 		static int shipLength;
 		public static void main(String[] args)
 			{
-				//Board();
-				shipLocations();
-				for (int i = 0; i < ships.length; i++)
-					{
-						for (int j = 0; j < ships.length; j++)
-							{
-								System.out.print(ships[i][j] + " ");
-							}
-						System.out.println();
-					}
+				Board.board();
+//				shipLocations();
+//				for (int i = 0; i < ships.length; i++)
+//					{
+//						for (int j = 0; j < ships.length; j++)
+//							{
+//								System.out.print(ships[i][j] + " ");
+//							}
+//						System.out.println();
+//					}
 			}
-		public static void Board()
-		{
-			System.out.println("    1      2      3      4      5");
-			System.out.println("   ____   ____   ____   ____   ____");
-			System.out.println(" A| " + "  " + "  |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-			System.out.println("   ____   ____   ____   ____   ____");
-			System.out.println(" B|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-			System.out.println("   ____   ____   ____   ____   ____");
-			System.out.println(" C|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-			System.out.println("   ____   ____   ____   ____   ____");
-			System.out.println(" D|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-			System.out.println("   ____   ____   ____   ____   ____");
-			System.out.println(" E|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-			System.out.println("   ____   ____   ____   ____   ____");
-		}
+//		public static void Board()
+//		{
+//			System.out.println("    1      2      3      4      5");
+//			System.out.println("   ____   ____   ____   ____   ____");
+//			System.out.println(" A| " + "  " + "  |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
+//			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
+//			System.out.println("   ____   ____   ____   ____   ____");
+//			System.out.println(" B|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
+//			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
+//			System.out.println("   ____   ____   ____   ____   ____");
+//			System.out.println(" C|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
+//			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
+//			System.out.println("   ____   ____   ____   ____   ____");
+//			System.out.println(" D|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
+//			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
+//			System.out.println("   ____   ____   ____   ____   ____");
+//			System.out.println(" E|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
+//			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
+//			System.out.println("   ____   ____   ____   ____   ____");
+//		}
 		public static void shipLocations()
 		{
 			shipType = "aircraft carrier";
