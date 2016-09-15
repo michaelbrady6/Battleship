@@ -8,13 +8,12 @@ public class GameRunner
 		static int row2;
 		static int column2;
 		static Scanner input = new Scanner(System.in);
-		static boolean [][] ships = new boolean[5][5];	
+		static String [][] ships = {{" "," "," "," "," "," "," "," "," ",},{" "," "," "," "," "," "," "," "," ",},{" "," "," "," "," "," "," "," "," ",},{" "," "," "," "," "," "," "," "," ",},{" "," "," "," "," "," "," "," "," ",},{" "," "," "," "," "," "," "," "," ",},{" "," "," "," "," "," "," "," "," ",},{" "," "," "," "," "," "," "," "," ",},{" "," "," "," "," "," "," "," "," ",}};	
 		static String shipType;
 		static int shipLength;
 		public static void main(String[] args)
 			{
-				Board.board();
-//				shipLocations();
+				shipLocations();
 //				for (int i = 0; i < ships.length; i++)
 //					{
 //						for (int j = 0; j < ships.length; j++)
@@ -24,32 +23,39 @@ public class GameRunner
 //						System.out.println();
 //					}
 			}
-//		public static void Board()
-//		{
-//			System.out.println("    1      2      3      4      5");
-//			System.out.println("   ____   ____   ____   ____   ____");
-//			System.out.println(" A| " + "  " + "  |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-//			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-//			System.out.println("   ____   ____   ____   ____   ____");
-//			System.out.println(" B|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-//			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-//			System.out.println("   ____   ____   ____   ____   ____");
-//			System.out.println(" C|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-//			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-//			System.out.println("   ____   ____   ____   ____   ____");
-//			System.out.println(" D|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-//			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-//			System.out.println("   ____   ____   ____   ____   ____");
-//			System.out.println(" E|  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-//			System.out.println("  |  " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   " + "" + "   |   ");
-//			System.out.println("   ____   ____   ____   ____   ____");
-//		}
 		public static void shipLocations()
 		{
+			Board.board();
 			shipType = "aircraft carrier";
+			shipLength = 4;
 			askForShip(shipType);
 			endCoordinatesToNumbers();
 			shipPlacing();
+			Board.board();
+			shipType = "battleship";
+			shipLength = 3;
+			askForShip(shipType);
+			endCoordinatesToNumbers();
+			shipPlacing();
+			Board.board();
+			shipType = "submarine";
+			shipLength = 2;
+			askForShip(shipType);
+			endCoordinatesToNumbers();
+			shipPlacing();
+			Board.board();
+			shipType = "light missile cruiser";
+			shipLength = 2;
+			askForShip(shipType);
+			endCoordinatesToNumbers();
+			shipPlacing();
+			Board.board();
+			shipType = "special operations";
+			shipLength = 1;
+			askForShip(shipType);
+			endCoordinatesToNumbers();
+			shipPlacing();
+			Board.board();
 		}
 		public static void firstCoordinatesToNumbers()
 		{
@@ -78,6 +84,26 @@ public class GameRunner
 				case "E":
 				{
 					row = 4;
+					break;
+				}
+				case "F":
+				{
+					row = 5;
+					break;
+				}
+				case "G":
+				{
+					row = 6;
+					break;
+				}
+				case "H":
+				{
+					row = 7;
+					break;
+				}
+				case "I":
+				{
+					row = 8;
 					break;
 				}
 			}
@@ -112,6 +138,26 @@ public class GameRunner
 						row2 = 4;
 						break;
 					}
+					case "F":
+					{
+						row2 = 5;
+						break;
+					}
+					case "G":
+					{
+						row2 = 6;
+						break;
+					}
+					case "H":
+					{
+						row2 = 7;
+						break;
+					}
+					case "I":
+					{
+						row2 = 8;
+						break;
+					}
 				}
 				column2 = Integer.parseInt(end.substring(1))-1;
 			}
@@ -119,9 +165,11 @@ public class GameRunner
 		{
 			System.out.println("Where do you want your " + ship +  " to start?");
 			first = input.nextLine();
+			first = first.toUpperCase();
 			firstCoordinatesToNumbers();
 			System.out.println("Where do you want your " + ship + " to end?");
 			end = input.nextLine();
+			end = end.toUpperCase();
 			endCoordinatesToNumbers();
 		}
 		public static void shipPlacing()
@@ -133,11 +181,11 @@ public class GameRunner
 				}
 			if (row == row2)
 				{
-					while (Math.abs(column - column2) != shipLength || Math.abs(row - row2) != shipLength)
+					while (Math.abs(column - column2) != shipLength)
 						{
 							if (Math.abs(column - column2) != shipLength)
 								{
-									System.out.println("That is not the proper length for the aircraft carrier. Please type in new coordinates");
+									System.out.println("That is not the proper length for the "+ shipType + ". Please type in new coordinates");
 									askForShip(shipType);
 								}
 						}
@@ -145,30 +193,30 @@ public class GameRunner
 						{
 							if (column < column2)
 								{
-									ships[row][column + i] = true;
+									ships[row][column + i] = "S";
 								}
 							else
 								{
-									ships[row][column2 + i] = true;
+									ships[row][column2 + i] = "S";
 								}
 						}
 				}
 			else if (column == column2)
 				{
-					while (Math.abs(row - row2) != shipLength || Math.abs(row - row2) != shipLength)
+					while (Math.abs(row - row2) != shipLength)
 						{
-							System.out.println("That is not the proper length for the aircraft carrier. Please type in new coordinates");
+							System.out.println("That is not the proper length for the "+ shipType + ". Please type in new coordinates");
 							askForShip(shipType);
 						}
 					for ( int i = 0; i <= Math.abs(row - row2); i++)
 						{
 							if (column < column2)
 								{
-									ships[row + i][column] = true;
+									ships[row + i][column] = "S";
 								}
 							else
 								{
-									ships[row + i][column2] = true;
+									ships[row + i][column2] = "S";
 								}
 						}
 				}
