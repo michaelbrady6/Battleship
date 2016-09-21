@@ -1,6 +1,11 @@
 import java.util.Scanner;
+
+
+
 public class GameRunner
 	{
+		
+		
 		static int row;
 		static String first;
 		static String end;
@@ -13,6 +18,7 @@ public class GameRunner
 		static int shipLength;
 		public static void main(String[] args)
 			{
+				Board.title();
 				shipLocations();
 //				for (int i = 0; i < ships.length; i++)
 //					{
@@ -163,11 +169,11 @@ public class GameRunner
 			}
 		public static void askForShip(String ship)
 		{
-			System.out.println("Where do you want your " + ship +  " to start?");
+			System.out.println("Where do you want your " + ship +  " to start? (you have " + (shipLength + 1) +  " total spaces)");
 			first = input.nextLine();
 			first = first.toUpperCase();
 			firstCoordinatesToNumbers();
-			System.out.println("Where do you want your " + ship + " to end?");
+			System.out.println("Where do you want your " + ship + " to end? (you have " + (shipLength + 1) +  " total spaces)");
 			end = input.nextLine();
 			end = end.toUpperCase();
 			endCoordinatesToNumbers();
