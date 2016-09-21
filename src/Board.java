@@ -1,7 +1,13 @@
 public class Board
 	{
+		public static void title(){
+			System.out.println("                   *** BATTLESHIP ***");
+			System.out.println();
+		}
+		
 		public static void board()
 			{
+				
 				System.out.println("    1     2     3     4     5     6     7     8     9");
 				System.out.println("   ____  ____  ____  ____  ____  ____  ____  ____  ____");
 				System.out.println(" A|  " + GameRunner.ships[0][0] + "  |  "  + GameRunner.ships[0][1] + "  |  " + GameRunner.ships[0][2] + "  |  " + GameRunner.ships[0][3] + "  |  " + GameRunner.ships[0][4] + "  |  " + GameRunner.ships[0][5] + "  |  " + GameRunner.ships[0][6] + "  |  " + GameRunner.ships[0][7] + "  |  " + GameRunner.ships[0][8] + "  |  ");
@@ -31,5 +37,6 @@ public class Board
 				System.out.println(" I|  " + GameRunner.ships[8][0] + "  |  "  + GameRunner.ships[8][1] + "  |  " + GameRunner.ships[8][2] + "  |  " + GameRunner.ships[8][3] + "  |  " + GameRunner.ships[8][4] + "  |  " + GameRunner.ships[8][5] + "  |  " + GameRunner.ships[8][6] + "  |  " + GameRunner.ships[8][7] + "  |  " + GameRunner.ships[8][8] + "  |  ");
 				System.out.println("  |   " + "  |  "  + "   |  " + "" + "   |  " + "" + "   |  " + "" + "   |  " + "" + "   |  " + "" + "   |  " + "" + "   |  " + "" + "   |  ");
 				System.out.println("   ____  ____  ____  ____  ____  ____  ____  ____  ____");
+				System.out.println();
 			}
 	}
